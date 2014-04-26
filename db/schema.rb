@@ -11,7 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202211229) do
+ActiveRecord::Schema.define(version: 20140426212725) do
+
+  create_table "districts", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nominations", force: true do |t|
+    t.integer  "party_id"
+    t.string   "candidate"
+    t.integer  "seat_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "nominations", ["party_id"], name: "index_nominations_on_party_id"
+  add_index "nominations", ["seat_id"], name: "index_nominations_on_seat_id"
+
+  create_table "parties", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "responses", force: true do |t|
+    t.integer  "seat_id"
+    t.integer  "user_id"
+    t.integer  "nomination_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "responses", ["nomination_id"], name: "index_responses_on_nomination_id"
+  add_index "responses", ["seat_id"], name: "index_responses_on_seat_id"
+  add_index "responses", ["user_id"], name: "index_responses_on_user_id"
+
+  create_table "seats", force: true do |t|
+    t.string   "type"
+    t.string   "name"
+    t.string   "incumbent"
+    t.integer  "district_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "seats", ["district_id"], name: "index_seats_on_district_id"
 
   create_table "users", force: true do |t|
     t.string   "provider"

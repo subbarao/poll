@@ -64,6 +64,14 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=square" %>
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Facebok", "/auth/facebook" %>
+<% end %>
+
               <li><%= link_to "Link1", "/path1"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>

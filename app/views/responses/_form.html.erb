@@ -1,0 +1,26 @@
+<%= form_for(@response, class: 'form-horizontal') do |f| %>
+  <% if @response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
+
+      <ul>
+        <% @response.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= @seat.name %>
+  (<%= @seat.district.name %>)
+  <% @seat.nominations.each do | nomination | %>
+    <div class="controls">
+      <%= f.radio_button :nomination_id, nomination.id %>
+      </div>
+      <%= f.label :nomination_id, "#{nomination.candidate}(#{nomination.party.name})", class: 'control-label' %><br>
+    <% end%>
+    <%= f.hidden_field :seat_id %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
