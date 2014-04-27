@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140426212725) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "districts", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -27,8 +30,8 @@ ActiveRecord::Schema.define(version: 20140426212725) do
     t.datetime "updated_at"
   end
 
-  add_index "nominations", ["party_id"], name: "index_nominations_on_party_id"
-  add_index "nominations", ["seat_id"], name: "index_nominations_on_seat_id"
+  add_index "nominations", ["party_id"], name: "index_nominations_on_party_id", using: :btree
+  add_index "nominations", ["seat_id"], name: "index_nominations_on_seat_id", using: :btree
 
   create_table "parties", force: true do |t|
     t.string   "name"
@@ -44,9 +47,9 @@ ActiveRecord::Schema.define(version: 20140426212725) do
     t.datetime "updated_at"
   end
 
-  add_index "responses", ["nomination_id"], name: "index_responses_on_nomination_id"
-  add_index "responses", ["seat_id"], name: "index_responses_on_seat_id"
-  add_index "responses", ["user_id"], name: "index_responses_on_user_id"
+  add_index "responses", ["nomination_id"], name: "index_responses_on_nomination_id", using: :btree
+  add_index "responses", ["seat_id"], name: "index_responses_on_seat_id", using: :btree
+  add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
 
   create_table "seats", force: true do |t|
     t.string   "type"
@@ -57,7 +60,7 @@ ActiveRecord::Schema.define(version: 20140426212725) do
     t.datetime "updated_at"
   end
 
-  add_index "seats", ["district_id"], name: "index_seats_on_district_id"
+  add_index "seats", ["district_id"], name: "index_seats_on_district_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider"
