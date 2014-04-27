@@ -1,0 +1,7 @@
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=square" %>
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Facebok", "/auth/facebook" %>
+<% end %>
