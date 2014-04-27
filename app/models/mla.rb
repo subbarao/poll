@@ -8,7 +8,7 @@ class Mla < Seat
     seats = page.css(".wikitable")
     district = nil
     parties = []
-    seats[3, seats.length].each do | seat |
+    seats[2, seats.length].each do | seat |
       seat.css("tr").each do | tr |
       if tr.css("th").length > 1
         ths = tr.css("th")
