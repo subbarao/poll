@@ -20,9 +20,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Home</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
+              <li><%= link_to "Home", "/"  %></li>
               <li><%= link_to "Districts", "/path1"  %></li>
               <li><%= link_to "Assembly", "/path2"  %></li>
               <li><%= link_to "Parliament", "/path3"  %></li>
@@ -43,12 +43,9 @@
           <%= yield %>
         </div>
       </div><!--/row-->
-
       <footer>
         <p>&copy; Company 2014</p>
       </footer>
-
     </div> <!-- /container -->
-
   </body>
 </html>

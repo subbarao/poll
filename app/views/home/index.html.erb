@@ -1,1 +1,11 @@
-
+<% unless current_user %>
+  <div class="row-fluid">
+    <div class="span4 offset4">
+      <%= link_to "Cast your vote with Facebok", "/auth/facebook", class: "btn btn-large btn-block btn-primary"  %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <p> why do you need to login using facebook?.  </p>
+    <p> we want to only allow legitimate users to vote and avoid duplicate votes. </p>
+  </div>
+<% end %>
