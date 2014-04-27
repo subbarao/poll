@@ -1,0 +1,18 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>All</th>
+      <% Party.all.each do | party | %>
+        <th><%= party.name %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= current_user.responses.length %></td>
+      <% Party.all.each do | party | %>
+        <td><%= current_user.responses.joins(nomination: :party).where("nominations.party_id = ?", party).count %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

@@ -1,4 +1,4 @@
-<%= form_for(@response, class: 'form-horizontal') do |f| %>
+<%= form_for(@response, html: { class: 'form-horizontal' }) do |f| %>
   <% if @response.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
@@ -11,14 +11,19 @@
     </div>
   <% end %>
 
-  <%= @seat.name %>
-  (<%= @seat.district.name %>)
-  <% @seat.nominations.each do | nomination | %>
+  <div class="control-group">
+    <label class="control-label"> <%= @seat.name %> (<%= @seat.district.name %>) </label>
+
     <div class="controls">
-      <%= f.radio_button :nomination_id, nomination.id %>
-      </div>
-      <%= f.label :nomination_id, "#{nomination.candidate}(#{nomination.party.name})", class: 'control-label' %><br>
-    <% end%>
+    <% @seat.nominations.each do | nomination | %>
+        <label class="radio">
+          <%= f.radio_button :nomination_id, nomination.id %>
+          <%= nomination.candidate %> (<%= nomination.party.name %>)
+        </label>
+      <% end%>
+    </div>
+  </div>
+
     <%= f.hidden_field :seat_id %>
     <div class="actions">
       <%= f.submit %>
