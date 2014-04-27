@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>District</th>
       <th>Incumbent</th>
       <th></th>
     </tr>
@@ -11,6 +12,7 @@
     <% Mla.all.each do |mla| %>
       <tr>
         <td><%= mla.name %></td>
+        <td><%= mla.district.name %></td>
         <td><%= mla.incumbent %></td>
         <% if selected = current_user.responses.where(seat: mla).first %>
           <td><%= selected.nomination.candidate %>/ <%= selected.nomination.party.name %></td>
