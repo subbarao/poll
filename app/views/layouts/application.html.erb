@@ -23,10 +23,7 @@
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Home", "/"  %></li>
-              <li><%= link_to "Districts", "/path1"  %></li>
-              <li><%= link_to "Assembly", "/path2"  %></li>
-              <li><%= link_to "Parliament", "/path3"  %></li>
-              <li><%= render "shared/facebook"  %></li>
+              <%= render "shared/facebook"  %>
             </ul>
           </div><!--/.nav-collapse -->
           <% if current_user %>
@@ -44,7 +41,7 @@
         </div>
       </div><!--/row-->
       <footer>
-        <p>&copy; Company 2014</p>
+        <p>&copy; Presented by Prashanth</p>
       </footer>
     </div> <!-- /container -->
   </body>

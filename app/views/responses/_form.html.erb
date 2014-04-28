@@ -25,7 +25,9 @@
   </div>
 
     <%= f.hidden_field :seat_id %>
-    <div class="actions">
-      <%= f.submit %>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit "Cast Your Vote", class: 'btn' %>
+      </div>
     </div>
   <% end %>
