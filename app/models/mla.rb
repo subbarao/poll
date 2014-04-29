@@ -6,9 +6,9 @@ class Mla < Seat
     url = 'http://en.wikipedia.org/wiki/Andhra_Pradesh_Legislative_Assembly_election,_2014'
     page = Nokogiri::HTML(open(url))
     seats = page.css(".wikitable")
+    seats[2, seats.length].each do | seat |
     district = nil
     parties = []
-    seats[2, seats.length].each do | seat |
       seat.css("tr").each do | tr |
       if tr.css("th").length > 1
         ths = tr.css("th")
