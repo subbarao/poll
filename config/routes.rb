@@ -1,10 +1,12 @@
 Pfl::Application.routes.draw do
-  root 'home#index'
+  root 'responses#index'
+
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :responses, except: [:new, :edit]
+
   scope('/seats/:seat_id') do
     resources :responses, only: [:new, :edit]
   end

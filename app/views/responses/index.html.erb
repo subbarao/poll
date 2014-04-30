@@ -14,8 +14,12 @@
         <td><%= mla.name %></td>
         <td><%= mla.district.name %></td>
         <td><%= mla.incumbent %></td>
-        <% if selected = current_user.responses.where(seat: mla).first %>
-          <td><%= selected.nomination.candidate %>/ <%= selected.nomination.party.name %></td>
+        <% if  current_user %>
+          <% if selected = current_user.responses.where(seat: mla).first %>
+            <td><%= selected.nomination.candidate %>/ <%= selected.nomination.party.name %></td>
+          <% else %>
+            <td><%= link_to 'Vote', new_response_path(seat_id: mla) %></td>
+          <% end %>
         <% else %>
           <td><%= link_to 'Vote', new_response_path(seat_id: mla) %></td>
         <% end %>

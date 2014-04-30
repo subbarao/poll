@@ -1,5 +1,5 @@
 class ResponsesController < ApplicationController
-  before_filter :authenticate
+  before_filter :authenticate, only: [:create]
   before_action :set_response, only: [:show, :edit, :update, :destroy]
 
   # GET /responses
@@ -16,7 +16,7 @@ class ResponsesController < ApplicationController
   # GET /responses/new
   def new
     @seat = Seat.find(params[:seat_id])
-    @response = current_user.responses.new(user: current_user, seat: @seat)
+    @response = Response.new(seat: @seat)
   end
 
   # GET /responses/1/edit
@@ -30,7 +30,7 @@ class ResponsesController < ApplicationController
 
     respond_to do |format|
       if @response.save
-        format.html { redirect_to responses_path, notice: 'Response was successfully created.' }
+        format.html { redirect_to responses_path, notice: 'Your vote was successfully recorded.' }
         format.json { render action: 'show', status: :created, location: @response }
       else
         format.html { render action: 'new' }
