@@ -1,8 +1,8 @@
-<%  a = 0 %> <% b = 0 %>
+<% a = 0 %>
 
 <% District.all.order("name").each do |district| %>
-    <span class="badge badge-important"> <%= a += 1 %></span>
     <%= link_to district.name, response_path(district),  class: "btn btn-mini btn-warning " %>
+    <span class="badge badge-important"> <%= Seat.where(district_id: district).count %></span>
 <% end %>
 <%= link_to "ALL", responses_path, class: "btn btn-small btn-primary active" %>
 <hr>
@@ -20,7 +20,7 @@
   <tbody>
     <% @seats.each do |mla| %>
       <tr>
-        <td> <%= b += 1 %> </td>
+        <td> <%= a += 1 %> </td>
         <td><%= mla.name %></td>
         <td><%= mla.district.name %></td>
         <td><%= mla.incumbent %></td>
