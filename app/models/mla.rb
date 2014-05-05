@@ -1,6 +1,9 @@
 require 'open-uri'
 class Mla < Seat
-  def self.create_all
+
+
+
+	def self.create_all
     district = nil
     parties = []
     url = 'http://en.wikipedia.org/wiki/Andhra_Pradesh_Legislative_Assembly_election,_2014'
@@ -32,4 +35,6 @@ class Mla < Seat
     end
     end
   end
+
+
 end

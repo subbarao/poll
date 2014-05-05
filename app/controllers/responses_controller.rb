@@ -5,8 +5,13 @@ class ResponsesController < ApplicationController
   # GET /responses
   # GET /responses.json
   def index
-    @responses = Response.all
+			if params[:id].present?
+				@seats = Seat.where(district_id: params[:id]).order("name")
+			else
+				@seats = Mla.all
+			end
   end
+
 
   # GET /responses/1
   # GET /responses/1.json

@@ -1,19 +1,30 @@
-<table class="table table-bordered">
+<%  a = 0 %> <% b = 0 %>
+
+<% District.all.order("name").each do |district| %>
+    <span class="badge badge-important"> <%= a += 1 %></span>
+    <%= link_to district.name, response_path(district),  class: "btn btn-mini btn-warning " %>
+<% end %>
+<%= link_to "ALL", responses_path, class: "btn btn-small btn-primary active" %>
+<hr>
+<table class="table table-condensed table-bordered">
   <thead>
-    <tr>
+    <tr bgcolor="#a9a9a9">
+      <th>Sl</th>
       <th>Name</th>
       <th>District</th>
       <th>Incumbent</th>
-      <th></th>
+      <th>Vote</th>
     </tr>
   </thead>
 
   <tbody>
-    <% Mla.all.each do |mla| %>
+    <% @seats.each do |mla| %>
       <tr>
+        <td> <%= b += 1 %> </td>
         <td><%= mla.name %></td>
         <td><%= mla.district.name %></td>
         <td><%= mla.incumbent %></td>
+
         <% if  current_user %>
           <% if selected = current_user.responses.where(seat: mla).first %>
             <td><%= selected.nomination.candidate %>/ <%= selected.nomination.party.name %></td>

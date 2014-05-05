@@ -5,7 +5,11 @@ Pfl::Application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  resources :responses, except: [:new, :edit]
+  resources :responses, except: [:new, :edit] do
+	  member do
+		  get 'index'
+	  end
+  end
 
   scope('/seats/:seat_id') do
     resources :responses, only: [:new, :edit]
