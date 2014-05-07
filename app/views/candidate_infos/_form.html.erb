@@ -1,0 +1,62 @@
+<%= form_for(@candidate_info) do |f| %>
+  <% if @candidate_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@candidate_info.errors.count, "error") %> prohibited this candidate_info from being saved:</h2>
+
+      <ul>
+      <% @candidate_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.select(:sex, %w{ Male Female }) %>
+
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br>
+    <%= f.number_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :pan %><br>
+    <%= f.text_field :pan %>
+  </div>
+  <div class="field">
+    <%= f.label :married %><br>
+    <%= f.text_field :married %>
+  </div>
+  <div class="field">
+    <%= f.label :spouse_name %><br>
+    <%= f.text_field :spouse_name %>
+  </div>
+  <div class="field">
+    <%= f.label :education %><br>
+    <%= f.text_field :education %>
+  </div>
+  <div class="field">
+    <%= f.label :occupation %><br>
+    <%= f.text_field :occupation %>
+  </div>
+  <div class="field">
+    <%= f.label :income_for_2012_2013 %><br>
+    <%= f.text_field :income_for_2012_2013 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

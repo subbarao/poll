@@ -1,0 +1,54 @@
+<% @nominations.each do |nom|  %>
+
+    <%= nom.name %>
+
+<% end %>
+
+
+<h1>Listing candidate_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Pan</th>
+      <th>Married</th>
+      <th>Spouse name</th>
+      <th>Education</th>
+      <th>Occupation</th>
+      <th>Income for 2012 2013</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidate_infos.each do |candidate_info| %>
+      <tr>
+        <td><%= candidate_info.sex %></td>
+        <td><%= candidate_info.age %></td>
+        <td><%= candidate_info.address %></td>
+        <td><%= candidate_info.mobile %></td>
+        <td><%= candidate_info.email %></td>
+        <td><%= candidate_info.pan %></td>
+        <td><%= candidate_info.married %></td>
+        <td><%= candidate_info.spouse_name %></td>
+        <td><%= candidate_info.education %></td>
+        <td><%= candidate_info.occupation %></td>
+        <td><%= candidate_info.income_for_2012_2013 %></td>
+        <td><%= link_to 'Show', candidate_info %></td>
+        <td><%= link_to 'Edit', edit_candidate_info_path(candidate_info) %></td>
+        <td><%= link_to 'Destroy', candidate_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Candidate info', new_candidate_info_path %>
