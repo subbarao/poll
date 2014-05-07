@@ -1,4 +1,6 @@
 Pfl::Application.routes.draw do
+  resources :candidate_infos
+
   root 'responses#index'
 
   get 'auth/:provider/callback', to: 'sessions#create'
