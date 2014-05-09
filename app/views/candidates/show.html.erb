@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @candidate.sex %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @candidate.age %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @candidate.address %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @candidate.mobile %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @candidate.email %>
+</p>
+
+<p>
+  <strong>Pan:</strong>
+  <%= @candidate.pan %>
+</p>
+
+<p>
+  <strong>Married:</strong>
+  <%= @candidate.married %>
+</p>
+
+<p>
+  <strong>Spouse name:</strong>
+  <%= @candidate.spouse_name %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @candidate.education %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @candidate.occupation %>
+</p>
+
+<p>
+  <strong>Income for 2012 2013:</strong>
+  <%= @candidate.income_for_2012_2013 %>
+</p>
+
+<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
+<%= link_to 'Back', candidates_path %>

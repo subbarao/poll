@@ -1,0 +1,54 @@
+<% @nominations.each do |nom|  %>
+
+    <%= nom.name %>
+
+<% end %>
+
+
+<h1>Listing Candidates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Pan</th>
+      <th>Married</th>
+      <th>Spouse name</th>
+      <th>Education</th>
+      <th>Occupation</th>
+      <th>Income for 2012 2013</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.sex %></td>
+        <td><%= candidate.age %></td>
+        <td><%= candidate.address %></td>
+        <td><%= candidate.mobile %></td>
+        <td><%= candidate.email %></td>
+        <td><%= candidate.pan %></td>
+        <td><%= candidate.married %></td>
+        <td><%= candidate.spouse_name %></td>
+        <td><%= candidate.education %></td>
+        <td><%= candidate.occupation %></td>
+        <td><%= candidate.income_for_2012_2013 %></td>
+        <td><%= link_to 'Show', candidate %></td>
+        <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
+        <td><%= link_to 'Destroy', candidate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Candidate', new_candidate_path %>

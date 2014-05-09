@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507004525) do
+ActiveRecord::Schema.define(version: 20140509132508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "candidate_infos", force: true do |t|
+  create_table "candidates", force: true do |t|
     t.string   "sex"
     t.integer  "age"
     t.string   "address"
@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 20140507004525) do
     t.integer  "district_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "candidate_details_id"
   end
 
   add_index "seats", ["district_id"], name: "index_seats_on_district_id", using: :btree
