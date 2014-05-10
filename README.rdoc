@@ -9,4 +9,4 @@ rake db:migrate
 rake db:seed
 bundle exec rails server
 
-this is edit made by @battula
+this is edit made by @battula2
