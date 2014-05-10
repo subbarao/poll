@@ -8,3 +8,5 @@ rake db:create
 rake db:migrate
 rake db:seed
 bundle exec rails server
+
+this is edit made by @battula
