@@ -1,5 +1,7 @@
 <% a = 0 %>
-
+<div class="pull-right">
+<%= link_to "Create Candidates", new_candidate_path, class: "btn btn-small btn-success active" %> <br>
+</div>
 <% District.all.order("name").each do |district| %>
     <%= link_to district.name, response_path(district),  class: "btn btn-mini btn-warning " %>
     <span class="badge badge-important"> <%= Seat.where(district_id: district).count %></span>
