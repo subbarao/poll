@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 20140507004525) do
     t.integer  "district_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "candidate_details_id"
   end
 
   add_index "seats", ["district_id"], name: "index_seats_on_district_id", using: :btree
