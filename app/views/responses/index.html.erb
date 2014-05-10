@@ -1,7 +1,10 @@
 <% a = 0 %>
 <div class="pull-right">
-<%= link_to "Create Candidates", new_candidate_path, class: "btn btn-small btn-success active" %> <br>
+  <%= link_to(image_tag("/assets/neta.jpeg", size: "120x100", :alt => "logo", :title => "Candidate Details"), new_candidate_path) %> <br>
+  <span class="label label-mini label-success"> <small>click neta for data</small></span>
 </div>
+
+
 <% District.all.order("name").each do |district| %>
     <%= link_to district.name, response_path(district),  class: "btn btn-mini btn-warning " %>
     <span class="badge badge-important"> <%= Seat.where(district_id: district).count %></span>
