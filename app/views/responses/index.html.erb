@@ -4,13 +4,22 @@
   <span class="label label-mini label-success"> <small>click neta for data</small></span>
 </div>
 
+<div class="btn-group">
+  <button class="btn btn-warning">Districts</button>
+  <button class="btn dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
 
-<% District.all.order("name").each do |district| %>
-    <%= link_to district.name, response_path(district),  class: "btn btn-mini btn-warning " %>
-    <span class="badge badge-important"> <%= Seat.where(district_id: district).count %></span>
-<% end %>
-<%= link_to "ALL", responses_path, class: "btn btn-small btn-primary active" %>
-<hr>
+      <ul class="dropdown-menu">
+          <li> <%= link_to "ALL", responses_path %> </li>
+          <li class="divider"></li>
+        <% District.all.order("name").each do |district| %>
+          <li> <%= link_to district.name, response_path(district)%>  </li>
+        <% end %>
+      </ul>
+
+</div>
+
 <table class="table table-condensed table-bordered">
   <thead>
     <tr bgcolor="#a9a9a9">
