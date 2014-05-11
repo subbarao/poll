@@ -10,55 +10,31 @@
       </ul>
     </div>
   <% end %>
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
-  <div class="field">
-    <%= f.label :sex %><br>
-    <%= f.select(:sex, %w{ Male Female }) %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </div>
-  <div class="field">
-    <%= f.label :mobile %><br>
-    <%= f.number_field :mobile %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :pan %><br>
-    <%= f.text_field :pan %>
-  </div>
-  <div class="field">
-    <%= f.label :married %><br>
-    <%= f.select(:married, %w{ Married Unmarried Divorcee }) %>
-  </div>
-  <div class="field">
-    <%= f.label :spouse_name %><br>
-    <%= f.text_field :spouse_name %>
-  </div>
-  <div class="field">
-    <%= f.label :education %><br>
-    <%= f.text_field :education %>
-  </div>
-  <div class="field">
-    <%= f.label :occupation %><br>
-    <%= f.text_field :occupation %>
-  </div>
-  <div class="field">
-    <%= f.label :income_for_2012_2013 %><br>
-    <%= f.text_field :income_for_2012_2013 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    Name: <%= f.text_field :name %>
+
+    Sex: <%= f.select(:sex, %w{ Male Female }) %>
+
+    Age: <%= f.number_field :age %>
+
+    Address: <%= f.text_area :address %> <br>
+
+    Mobile: <%= f.number_field :mobile %>
+
+    Email: <%= f.text_field :email %>
+
+    PAN: <%= f.text_field :pan %>
+
+    Marriage: <%= f.select(:married, %w{ Married Unmarried Divorcee }) %> <br>
+
+    Spouse: <%= f.text_field :spouse_name %>
+
+    Education: <%= f.text_field :education %>
+
+    Occupation: <%= f.text_field :occupation %> <br>
+
+    Income for 2012-13: <%= f.text_field :income_for_2012_2013 %> <br>
+
+    <%= f.submit class: "btn btn-small btn-success active" %>
+
 <% end %>
