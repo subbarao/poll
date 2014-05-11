@@ -1,6 +1,6 @@
 require 'open-uri'
 class Mp < Seat
-=begin
+
   def self.search!
     url = 'http://en.wikipedia.org/wiki/Andhra_Pradesh_Legislative_Assembly_election,_2014'
     page = Nokogiri::HTML(open(url))
@@ -30,5 +30,5 @@ class Mp < Seat
       end
     end
   end
-=end
+
 end
