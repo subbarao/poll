@@ -1,7 +1,7 @@
 require 'open-uri'
 class Mla < Seat
 
-
+=begin
 
   def self.create_all
     district = nil
@@ -130,6 +130,6 @@ class Mla < Seat
     end
     
   end
-
+=end
 
 end
