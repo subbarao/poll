@@ -1,5 +1,5 @@
 Pfl::Application.routes.draw do
-  resources :candidate_infos
+  resources :candidates
 
   root 'responses#index'
 

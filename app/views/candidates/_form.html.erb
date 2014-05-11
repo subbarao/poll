@@ -1,20 +1,22 @@
-<%= form_for(@candidate_info) do |f| %>
-  <% if @candidate_info.errors.any? %>
+<%= form_for(@candidate) do |f| %>
+  <% if @candidate.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@candidate_info.errors.count, "error") %> prohibited this candidate_info from being saved:</h2>
+      <h2><%= pluralize(@candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
 
       <ul>
-      <% @candidate_info.errors.full_messages.each do |msg| %>
+      <% @candidate.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
   <div class="field">
     <%= f.label :sex %><br>
     <%= f.select(:sex, %w{ Male Female }) %>
-
   </div>
   <div class="field">
     <%= f.label :age %><br>
@@ -38,7 +40,7 @@
   </div>
   <div class="field">
     <%= f.label :married %><br>
-    <%= f.text_field :married %>
+    <%= f.select(:married, %w{ Married Unmarried Divorcee }) %>
   </div>
   <div class="field">
     <%= f.label :spouse_name %><br>

@@ -1,6 +1,6 @@
 class CreateCandidateInfos < ActiveRecord::Migration
   def change
-    create_table :candidate_infos do |t|
+    create_table :candidates do |t|
       t.string :sex
       t.integer :age
       t.string :address
