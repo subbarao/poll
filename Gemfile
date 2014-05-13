@@ -56,3 +56,4 @@ gem "twitter-bootstrap-rails"
 
 gem 'seed_dump'
 gem "table_print"
+gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
