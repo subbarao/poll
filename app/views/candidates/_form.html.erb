@@ -1,4 +1,4 @@
-<%= form_for(@candidate) do |f| %>
+<%= form_for(@candidate, :html => {:class => "form-horizontal"}) do |f| %>
   <% if @candidate.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
@@ -11,29 +11,89 @@
     </div>
   <% end %>
 
-    Name: <%= f.text_field :name %>
+      <div class="control-group">
+        <%= f.label :name,  class: "control-label"%>
+            <div class="controls">
+              <%= f.text_field :name %>
+            </div>
+      </div>
 
-    Sex: <%= f.select(:sex, %w{ Male Female }) %>
+      <div class="control-group">
+        <%= f.label :sex,  class: "control-label"%>
+            <div class="controls">
+              <%= f.select(:sex, %w{ Male Female }) %>
+            </div>
+      </div>
 
-    Age: <%= f.number_field :age %>
+    <div class="control-group">
+      <%= f.label :age, class: "control-label" %>
+      <div class="controls">
+        <%= f.number_field :age %>
+      </div>
+    </div>
 
-    Address: <%= f.text_area :address %> <br>
+    <div class="control-group">
+      <%= f.label :address, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_area :address %>
+      </div>
+    </div>
 
-    Mobile: <%= f.number_field :mobile %>
+    <div class="control-group">
+      <%= f.label :mobile, class: "control-label" %>
+      <div class="controls">
+        <%= f.number_field :mobile %>
+      </div>
+    </div>
 
-    Email: <%= f.text_field :email %>
+    <div class="control-group">
+      <%= f.label :email, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :email %>
+      </div>
+    </div>
 
-    PAN: <%= f.text_field :pan %>
+    <div class="control-group">
+      <%= f.label :pan, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :pan %>
+      </div>
+    </div>
 
-    Marriage: <%= f.select(:married, %w{ Married Unmarried Divorcee }) %> <br>
+    <div class="control-group">
+      <%= f.label :marriage, class: "control-label" %>
+      <div class="controls">
+        <%= f.select(:married, %w{ Married Unmarried Divorcee }) %>
+      </div>
+    </div>
 
-    Spouse: <%= f.text_field :spouse_name %>
+    <div class="control-group">
+      <%= f.label :spouse_name, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :spouse_name %>
+      </div>
+    </div>
 
-    Education: <%= f.text_field :education %>
+    <div class="control-group">
+      <%= f.label :education, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :education %>
+      </div>
+    </div>
 
-    Occupation: <%= f.text_field :occupation %> <br>
+    <div class="control-group">
+      <%= f.label :occupation, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :occupation %>
+      </div>
+    </div>
 
-    Income for 2012-13: <%= f.text_field :income_for_2012_2013 %> <br>
+    <div class="control-group">
+      <%= f.label :income_for_2012_2013, class: "control-label" %>
+      <div class="controls">
+        <%= f.number_field :income_for_2012_2013 %>
+      </div>
+    </div>
 
     <%= f.submit class: "btn btn-small btn-success active" %>
 
