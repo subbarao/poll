@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ResponsesControllerTest < ActionController::TestCase
+=begin
   setup do
     @response = responses(:one)
   end
@@ -46,4 +47,5 @@ class ResponsesControllerTest < ActionController::TestCase
 
     assert_redirected_to responses_path
   end
+=end
 end
