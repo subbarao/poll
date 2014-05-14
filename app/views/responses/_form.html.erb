@@ -18,7 +18,7 @@
     <% @seat.nominations.each do | nomination | %>
         <label class="radio">
           <%= f.radio_button :nomination_id, nomination.id %>
-          <%= nomination.candidate %> (<%= nomination.party.name %>)
+          <%= nomination.candidate.name %> (<%= nomination.party.name %>)
         </label>
       <% end%>
     </div>
